@@ -1,0 +1,325 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo&family=Hanken+Grotesk:wght@400;500;700&display=swap');
+
+html{
+    scroll-behavior: smooth;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Hanken Grotesk', sans-serif;
+}
+
+.fixed ul{
+    list-style: none;
+    display: none;
+}
+
+ul{
+    list-style-type: none;
+}
+
+.overlay {
+    height: 0%;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #212121;
+    overflow-y: hidden;
+    transition: 1s;
+}
+  
+.overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 2em;
+}
+  
+.overlay a {
+    padding: .1em;
+    text-decoration: none;
+    font-size: 3em;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+    letter-spacing: -.1em;
+}
+  
+.overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+}
+  
+.overlay .closebtn {
+    position: absolute;
+    top: 2%;
+    left: 84%;
+    font-size: 3em;
+}
+
+.navHam{
+    position: fixed;
+    top: 7%;
+    left: 85%;
+    cursor:pointer;
+}
+
+.navHam:hover{
+    color: #818181;
+}
+
+main{
+    margin: 5%;
+}
+
+.main-name{
+    padding-top: 2%;
+    line-height: 1.5em;
+    letter-spacing: .001rem;
+    font-size: 2em;
+}
+
+.main-about img{
+    width: 100%;
+}
+
+.main-about{
+    margin: 0 0 15% 0;
+    display: grid;
+    gap: 1em;
+    grid-auto-rows: auto auto auto;
+}
+
+.main-about .main-description h3{
+    letter-spacing: .001rem;
+    font-size: 1.5em;
+}
+
+.main-about .main-description p{
+    font-size: 1em;
+    font-weight: 400;
+}
+
+.project{
+    margin-bottom: 15%;
+    display: block;
+}
+
+.project h1, .about h1{
+    font-size: 2em;
+    letter-spacing: .001rem;
+}
+
+.project .flex-container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.project .flex-container .project-box{
+    border: 2px solid black;
+    margin-top: 2%;
+    height: 10em;
+}
+
+
+.about{
+    display: flex;
+    flex-direction: column;
+}
+
+.about .left-side, .about .right-side{
+    margin-top: 4%;
+}
+
+.about li{
+    line-height: 1.5em;
+    font-weight: 500;
+}
+
+
+footer{
+    padding-bottom: 10%;
+    height: 80%;
+    color: white;
+    background-color: #212121;
+}
+
+footer .footer-content{
+    padding: 5%;
+}
+
+footer h1{
+    font-size: 2em;
+    margin-bottom: .5rem;
+}
+
+footer hr{
+    margin-bottom: .5rem;
+}
+
+footer p{
+    font-size: 2em;
+    font-weight: 500;
+    margin: .5em 0 .5em 0;
+}
+
+footer #mail{
+    font-size: 1.2rem;
+}
+
+footer a{
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover{
+    color: #818181;
+}
+
+footer .links{
+    display: flex;
+    justify-content: space-around;
+}
+
+@media (min-width: 900px){
+
+    #navbar, .navHam{
+        display: none;
+    }
+    
+    .navbar ul{
+        list-style: none;
+        display: flex;
+        justify-content: space-around;
+        position: fixed;
+        width: 100%;
+        margin: 2%;
+        top: 0;
+        
+    }
+    
+    .navbar a{
+        text-decoration: none;
+        color: black;
+        font-weight: 700;
+        font-size: 2em;
+        letter-spacing: -.2rem;
+    }
+    
+    .hover-underline-animation {
+        display: inline-block;
+        position: relative;
+        color: #0087ca;
+    }
+      
+    .hover-underline-animation::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 5%;
+        bottom: 0;
+        left: 0;
+        background-color: black;
+        transform-origin: bottom right;
+        transition: transform 0.5s ease-out;
+    }
+      
+    .hover-underline-animation:hover::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
+
+    .main-name{
+        grid-area: area1;
+        font-size: 3.5em;
+        letter-spacing: -.1em;
+    }
+
+    .main-image{
+        grid-area: area2;
+    }
+
+    .main-description{
+        padding-top: 10%;
+        grid-area: area3;
+    }
+
+    .main-about .main-description h3{
+        font-size: 2em;
+    }
+
+    .main-about .main-description p{
+        font-size: 1.5em;
+        font-weight: 500;
+    }
+
+    .main-about{
+        display: grid;
+        grid-template-areas: "area1 area1 area1" "area2 area2 area3";
+        height: 50vh;
+    }
+
+    .project{
+       display: block;
+       margin-bottom: 2em;
+    }
+
+    .project h1, .about h1, footer h1{
+        font-size: 3.5em;
+        letter-spacing: -.1em;
+    }
+
+    .project .flex-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .project .flex-container .project-box{
+        height: 300px;
+        width: 300px;
+    }
+
+    .about .about-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-top: -1rem;
+    }
+
+    .about h3{
+        font-size: 2em;
+    }
+
+    footer p:nth-of-type(2){
+        margin-top: 2%;
+    }
+
+    footer .footer-content{
+        padding: 4%;
+    }
+
+    footer #mail{
+        font-size: 2rem;
+    }
+
+    footer .links{
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    footer .links a{
+        margin-left: 2%;
+    }
+
+    footer{
+        height: 60vh;
+    }
+
+}
